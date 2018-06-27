@@ -9,4 +9,4 @@ for changelogs and semantic versioning available at:
 - Initial project setup: git, documentation
 - rbenv/ruby 2.5.1
 - gems: bundler, rails 5.2.0
-- 
+- *postgresd
