@@ -65,3 +65,5 @@ gem "graphql", "~> 1.8"
 
 gem 'graphiql-rails', '1.4.4', group: :development
 gem "factory_bot", "~> 4.10"
+
+gem "database_cleaner", "~> 1.7"
