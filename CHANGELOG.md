@@ -8,6 +8,7 @@ for changelogs and semantic versioning available at:
 ### Added
 - GraphQL, GraphiQL
 - Character model
+- DatabaseCleaner, Faker, FactoryBot, RSpec
 
 ## [0.1.0] - 2018-05-20
 ### Added
