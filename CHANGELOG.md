@@ -7,8 +7,12 @@ for changelogs and semantic versioning available at:
 ## [0.1.2] - 2018-06-27
 ### Added
 - GraphQL, GraphiQL
-- Character model
+- seeds.rb
+- Character model, spec, factory
 - DatabaseCleaner, Faker, FactoryBot, RSpec
+
+### Changed
+- Rename characters.name to characters.title
 
 ## [0.1.0] - 2018-05-20
 ### Added
