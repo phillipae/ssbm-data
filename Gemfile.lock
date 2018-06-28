@@ -75,6 +75,8 @@ GEM
     crass (1.0.4)
     erubi (1.7.1)
     execjs (2.7.0)
+    factory_bot (4.10.0)
+      activesupport (>= 3.0.0)
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -200,6 +202,7 @@ DEPENDENCIES
   capybara (>= 2.15, < 4.0)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  factory_bot (~> 4.10)
   graphiql-rails (= 1.4.4)
   graphql (~> 1.8)
   jbuilder (~> 2.5)
