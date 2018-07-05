@@ -4,7 +4,7 @@ for changelogs and semantic versioning available at:
 * https://keepachangelog.com/en/0.3.0/
 * https://semver.org/
 
-## [0.1.2] - 2018-06-27
+## [0.1.2] - 2018-06-27, 2018-07-05
 ### Added
 - GraphQL, GraphiQL
 - seeds.rb
