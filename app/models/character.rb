@@ -11,7 +11,7 @@ class Character < ApplicationRecord
               greater_than_or_equal_to: 0.0125,
               less_than_or_equal_to: 0.09
             }
-  validates :air_acceleration_float,
+  validates :air_acceleration_max,
             presence: true,
             numericality: {
               greater_than_or_equal_to: 0.0325,
