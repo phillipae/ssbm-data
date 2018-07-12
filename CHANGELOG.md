@@ -4,6 +4,11 @@ for changelogs and semantic versioning available at:
 * https://keepachangelog.com/en/0.3.0/
 * https://semver.org/
 
+## [0.1.4] - 2018-07-12
+### Added
+- Character specs
+- Actions table, model, etc
+
 ## [0.1.3] - 2018-07-06
 ### Added
 - Character primitive attributes
