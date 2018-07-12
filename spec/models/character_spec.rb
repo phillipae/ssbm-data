@@ -20,11 +20,11 @@ describe Character do
     let(:char) { FactoryBot.create :character }
 
     it "returns a title" do
-      expect(char).to receive(:title)
+      expect(char.title).to be_a(String)
     end
 
     it "returns a rank" do
-      expect(char.rank).to receive(:rank)
+      expect(char.rank).to be_between(1, 30)
     end
 
     it "returns an air_acceleration_base" do
