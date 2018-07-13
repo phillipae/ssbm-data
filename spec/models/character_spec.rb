@@ -1,14 +1,10 @@
 require 'spec_helper.rb'
 
-def attr_names
-  Character.column_names
-end
+# Data setup for testing
+def attr_names() Character.column_names; end
+def attr_numerics_names() attr_names - %w[id title created_at updated_at]; end
 
-def attr_numerics_names
-  attr_names - %w[id title created_at updated_at]
-end
-
-def attr_ranges
+def attr_numerics_ranges
   [
     [1,      30],
     [0.01,   0.19],
@@ -24,9 +20,10 @@ def attr_ranges
 end
 
 def attr_numerics_with_ranges
-  attr_numerics_names.zip(attr_ranges).map(&:flatten)
+  attr_numerics_names.zip(attr_numerics_ranges).map(&:flatten)
 end
 
+# Helper method setup for testing
 def check_attribute_value_exists(attr_name)
   it "is invalid without a #{attr_name}" do
     char = Character.new
@@ -35,28 +32,25 @@ def check_attribute_value_exists(attr_name)
   end
 end
 
-def check_attribute_value_within_range(attr_name, attr_min_value, attr_max_value)
-  it "has a(n) #{attr_name} value within valid range" do
-    expect(char.send(attr_name.to_sym)).to be_between(attr_min_value, attr_max_value)
+def check_attribute_value_within_range(attr_range)
+  it "has a(n) #{attr_range[0]} value within valid range" do
+    expect(char.send(attr_range[0].to_sym)).to be_between(attr_range[1], attr_range[2])
   end      
 end
 
+# Begin testing
 describe Character do
   it "has a valid factory" do
+    skip
   end
 
   context "without valid attributes" do
-    attr_names.each do |attr_name|
-      check_attribute_value_exists(attr_name)
-    end
+    attr_names.each(&method(:check_attribute_value_exists))
   end
 
   context "with valid attributes" do
     let(:char) { FactoryBot.create :character }
 
-    attr_numerics_with_ranges.each do |attr_name, attr_min_value, attr_max_value|
-      check_attribute_value_within_range(attr_name, attr_min_value, attr_max_value)
-    end
-
+    attr_numerics_with_ranges.each(&method(:check_attribute_value_within_range))
   end
 end
