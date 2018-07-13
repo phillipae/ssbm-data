@@ -7,7 +7,7 @@ for changelogs and semantic versioning available at:
 ## [0.1.4] - 2018-07-12
 ### Added
 - Character specs
-- Jumps table, model, factory
+- Jump table, model, factory, specs
 
 ## [0.1.3] - 2018-07-06
 ### Added
