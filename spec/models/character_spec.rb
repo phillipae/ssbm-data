@@ -1,7 +1,8 @@
 require 'spec_helper.rb'
 
 # Data setup for testing
-def attr_names() Character.column_names; end
+def model_name() "Character".constantize; end
+def attr_names() model_name.column_names; end
 def attr_numerics_names() attr_names - %w[id title created_at updated_at]; end
 
 def attr_numerics_ranges
@@ -26,7 +27,7 @@ end
 # Helper method setup for testing
 def check_attribute_value_exists(attr_name)
   it "is invalid without a #{attr_name}" do
-    char = Character.new
+    char = model_name.new
     char.send("#{attr_name}=", nil)
     expect(char).not_to be_valid
   end
