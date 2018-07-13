@@ -11,5 +11,9 @@ FactoryBot.define do
     fall_speed_fast             { Faker::Number.between(1.6, 3.5).truncate(2) }
     gravity                     { Faker::Number.between(0.064, 0.25).truncate(3) }
     weight                      { Faker::Number.between(55, 140) }
+
+    after(:create) do |character|
+      FactoryBot.create(:jump, character: character)
+    end
   end
 end

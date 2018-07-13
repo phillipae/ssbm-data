@@ -1,4 +1,6 @@
 class Character < ApplicationRecord
+  has_one :jump
+
   validates :air_acceleration_base,
             presence: true,
             numericality: {

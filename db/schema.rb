@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_07_003506) do
+ActiveRecord::Schema.define(version: 2018_07_13_005332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 2018_07_07_003506) do
     t.decimal "fall_speed_fast", precision: 3, scale: 2
     t.decimal "gravity", precision: 4, scale: 3
     t.integer "weight"
+  end
+
+  create_table "jumps", force: :cascade do |t|
+    t.bigint "character_id"
+    t.integer "jumpsquat"
+    t.integer "max_jumps"
+    t.integer "landing_lag"
+    t.decimal "jump_force", precision: 3, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["character_id"], name: "index_jumps_on_character_id"
   end
 
 end
