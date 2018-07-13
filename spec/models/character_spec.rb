@@ -32,9 +32,11 @@ def check_attribute_value_exists(attr_name)
   end
 end
 
-def check_attribute_value_within_range(attr_range)
-  it "has a(n) #{attr_range[0]} value within valid range" do
-    expect(char.send(attr_range[0].to_sym)).to be_between(attr_range[1], attr_range[2])
+def check_attribute_value_within_range(attr_values)
+  attribute = [:attr_name, :attr_value_min, :attr_value_max].zip(attr_values).to_h
+  it "has a(n) #{attribute[:attr_name]} value within valid range" do
+    expect(char.send(attribute[:attr_name].to_sym)).
+    to be_between(attribute[:attr_value_min], attribute[:attr_value_max])
   end      
 end
 
