@@ -4,10 +4,14 @@ for changelogs and semantic versioning available at:
 * https://keepachangelog.com/en/0.3.0/
 * https://semver.org/
 
-## [0.1.4] - 2018-07-12
+## [0.1.4] - 2018-07-12, 2018-07-23
 ### Added
 - Character specs
 - Jump table, model, factory, specs
+- Jump spec behavior factored out to helper
+
+### Todo
+- Fix Char spec to match updated jump specs
 
 ## [0.1.3] - 2018-07-06
 ### Added

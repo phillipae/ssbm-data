@@ -28,4 +28,15 @@ class Jump < ApplicationRecord
               greater_than_or_equal_to: 1.6,
               less_than_or_equal_to: 4.1
             }
+
+  def self.attr_non_numerics_names() %w[id created_at updated_at character_id]; end
+  def self.attr_numerics_ranges
+    [
+      [3,   8],
+      [2,   6],
+      [4,   6],
+      [1.6, 4.1]
+    ]
+  end
+
 end
