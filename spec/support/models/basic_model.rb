@@ -22,8 +22,12 @@ def initialize_invalid_testing_instance(model_name)
   model_constant(model_name).new
 end
 
+# HACK: handle dynamically instead of via hard-coding
 def initialize_valid_testing_instance(model_name)
-  (FactoryBot.create model_constant(model_name).reflect_on_all_associations(:belongs_to).map(&:name).first).send(model_sym(model_name))
+  case model_name
+  when 'Character' then FactoryBot.create(:character)
+  when 'Jump' then (FactoryBot.create model_constant(model_name).reflect_on_all_associations(:belongs_to).map(&:name).first).send(model_sym(model_name))
+  end
 end
 
 # helper methods
