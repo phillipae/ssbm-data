@@ -10,4 +10,10 @@ JumpType = GraphQL::ObjectType.define do
   field :max_jumps,     types.Int
   field :landing_lag,   types.Int
   field :jump_force,    types.Float
+  field :character do
+    type CharacterType
+    resolve -> (jump, args, ctx) {
+      jump.character
+    }
+  end
 end
