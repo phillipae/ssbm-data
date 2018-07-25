@@ -16,4 +16,10 @@ CharacterType = GraphQL::ObjectType.define do
   field :fall_speed_fast, types.Float
   field :gravity, types.Float
   field :weight, types.Int
+  field :jump do
+    type JumpType
+    resolve -> (character, args, ctx) {
+      character.jump
+    }
+  end
 end
