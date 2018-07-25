@@ -7,4 +7,10 @@ QueryType = GraphQL::ObjectType.define do
       Character.all
     }
   end
+  field :jumps do
+    type types[JumpType]
+    resolve -> (obj, args, ctx) {
+      Jump.all
+    }
+  end
 end

@@ -1,9 +1,5 @@
-require 'spec_helper.rb'
+require 'rails_helper'
 
 describe Character do
-  it "has a valid factory"
-  it "is invalid without a title"
-  it "is invalid without a rank"
-  it "returns a title"
-  it "returns a rank"
+  it_should_behave_like 'a basic model', 'Character'
 end

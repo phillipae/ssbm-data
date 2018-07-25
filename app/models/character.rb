@@ -1,4 +1,6 @@
 class Character < ApplicationRecord
+  has_one :jump
+
   validates :air_acceleration_base,
             presence: true,
             numericality: {
@@ -54,4 +56,21 @@ class Character < ApplicationRecord
               greater_than_or_equal_to: 55,
               less_than_or_equal_to: 140
             }
+
+def self.attr_non_numerics_names() %w[id title created_at updated_at]; end
+def self.attr_numerics_ranges
+  [
+    [1,      30],
+    [0.01,   0.19],
+    [0.0125, 0.09],
+    [0.0325, 0.28],
+    [0.001,  0.05],
+    [0.68,   1.35],
+    [1.3,    3.1],
+    [1.6,    3.5],
+    [0.064,  0.25],
+    [55,     140]
+  ]
+end
+
 end
